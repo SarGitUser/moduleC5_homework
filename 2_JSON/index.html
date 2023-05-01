@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание № 2</title>
+</head>
+<body>
+    <script>
+        /* Этап 1. Подготовка данных */
+
+        // JSON, который мы будем парсить
+        const jsonString = `
+        {
+            "list1": 
+            {
+                "name": "Petr",
+                "age": "20",
+                "prof": "mechanic"
+            },
+            "list2": 
+            {
+                "name": "Vova",
+                "age": "60",
+                "prof": "pilot"
+            }
+        }
+        `;
+        //console.log('jsonString', jsonString);
+
+        /* Этап 2. Получение данных */
+        const data = JSON.parse(jsonString);
+        //console.log('data', data);
+        const list1 = data.list1;
+        const list2 = data.list2;
+        //console.log('list1', list1);
+        //console.log('list2', list2);
+
+        /* Этап 3. Запись данных в результирующий объект */
+        const list_1 = {
+            name: list1.name,
+            age: Number(list1.age),
+            prof: list1.prof,
+        };
+        const list_2 = {
+            name: list2.name,
+            age: Number(list2.age),
+            prof: list2.prof,
+        };
+        //console.log('list_1', list_1);
+        //console.log('list_2', list_2);
+
+        const list = { list: [list_1, list_2 ] };
+        console.log('JS-объект:', list)
+    </script>
+</body>
+</html>

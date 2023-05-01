@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание № 1</title>
+</head>
+<body>
+    <script>
+        /* Этап 1. Подготовка данных */
+
+        // Создание экземпляра класса DOMParser. Он позволит нам парсить XML
+        const parser = new DOMParser();
+
+        // XML, который мы будем парсить
+        const xmlString = `
+        <list>
+            <student>
+                <name lang="en">
+                    <first>Ivan</first>
+                    <second>Ivanov</second>
+                </name>
+                <age>35</age>
+                <prof>teacher</prof>
+            </student>
+    
+            <student>
+                <name2 lang="ru">
+                    <first2>Петр</first2>
+                    <second2>Петров</second2>
+                </name2>
+                <age2>58</age2>
+                <prof2>driver</prof2>
+            </student>
+        </list>
+        `;
+
+        /* Этап 2. Получение данных */
+
+        // Парсинг XML
+        const xmlDOM = parser.parseFromString(xmlString, "text/xml");
+
+        // Получение всех DOM-нод
+        const listNode = xmlDOM.querySelector("list");
+
+        const firstNode = listNode.querySelector("first");
+        const secondNode = listNode.querySelector("second");
+        const nameNode = listNode.querySelector("name");
+        const ageNode = listNode.querySelector("age");
+        const profNode = listNode.querySelector("prof");
+
+        const first2Node = listNode.querySelector("first2");
+        const second2Node = listNode.querySelector("second2");
+        const name2Node = listNode.querySelector("name2");
+        const age2Node = listNode.querySelector("age2");
+        const prof2Node = listNode.querySelector("prof2");
+
+        // Получение данных из атрибутов
+        const langAttr = nameNode.getAttribute('lang');
+        const lang2Attr = name2Node.getAttribute('lang');
+
+        /* Этап 3. Запись данных в результирующий объект */
+        const list1 = {
+            name: `${firstNode.textContent} ${secondNode.textContent}`,
+            age: Number(ageNode.textContent),
+            prof: profNode.textContent,
+            lang: langAttr,
+        };
+        const list2 = {
+            name: `${first2Node.textContent} ${second2Node.textContent}`,
+            age: Number(age2Node.textContent),
+            prof: prof2Node.textContent,
+            lang: lang2Attr,
+        };
+        //console.log('list1', list1);
+        //console.log('list2', list2);
+
+        const list = { list: [list1, list2 ] };
+        console.log('JS-объект:', list)
+    </script>
+</body>
+</html>

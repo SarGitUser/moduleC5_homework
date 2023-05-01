@@ -1,0 +1,89 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px
+}
+
+p {
+    margin: 20px;
+    font-size: 18px;
+    color: white
+}
+
+.wraper_input {
+    margin-top: 10px;
+    background-color: rgb(184, 106, 6);
+    /*background-color: rgb(212, 211, 105);*/
+    color: #25f5cb;
+    /*color: white;*/
+    border: 0;
+    border-radius: 30px;
+}
+
+#page:hover {
+    transform: scale(1.2);
+}
+
+#limit:hover {
+    transform: scale(1.2);  
+}
+
+.fields {
+    display: flex;
+    text-align: center;
+    font-size: 22px;
+    align-items: flex-end
+}
+
+input {
+    width: 55px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: #1e023d;
+    text-align: center;
+    font-size: 22px;
+    background-color: rgb(141, 237, 133)   
+}
+
+input:focus {
+    transform: scale(1.2);   
+}
+
+.btn {
+    border: none;
+    width: 250px;
+    height: 80px;
+    background-color: rgb(65, 143, 58);
+    font-size: 32px;
+    transition: 1s;
+    color: #1e023d;
+    border-radius: 15px
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    color: #f0e02e
+}
+
+#content {
+    flex-wrap: wrap;
+    background-color: rgb(65, 143, 58);
+    border: 0;
+    border-radius: 30px;
+    min-height: 100px;
+    margin-top: 10px
+}
+
+img {
+    width: 300px;
+    border: 0;
+    font-size: 22px;
+    border-radius: 15px
+}
+
+.card {
+    display: block;
+    text-align: center
+}
